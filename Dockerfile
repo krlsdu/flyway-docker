@@ -13,5 +13,4 @@ RUN curl -L https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/${FLY
   && tar -xzf flyway-commandline-${FLYWAY_VERSION}.tar.gz --strip-components=1 \
   && rm flyway-commandline-${FLYWAY_VERSION}.tar.gz
 
-ENTRYPOINT ["/flyway/flyway"]
-CMD ["-?"]
+ENV PATH="/flyway:${PATH}"
